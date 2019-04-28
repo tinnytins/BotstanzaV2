@@ -1,0 +1,70 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>f63aea91-d877-42fa-a498-bce95d8f7bf5</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>Botstanzav2.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>Botstanzav2</Name>
+    <RootNamespace>Botstanzav2</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterId>Global|PythonCore|3.7</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Botstanzav2.py" />
+    <Compile Include="mod\conv.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mod\feedback.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mod\filter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mod\reacts.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mod\rps.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
+    <Folder Include="mod\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\BannedWords.csv" />
+    <Content Include="data\conf.json" />
+    <Content Include="data\Conversions.json">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="data\FilteredWords.csv" />
+    <Content Include="mod\conf.py">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.7" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
