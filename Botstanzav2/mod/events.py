@@ -1,6 +1,6 @@
 from mod.conf import Configuration
 import re
-import datetime
+from datetime import datetime, timedelta
 import json
 import operator
 from mod.msg import messages
@@ -60,15 +60,15 @@ class events:
     def list_events():
         output = ""
         for e in events.event_list:
-            if datetime.datetime.strptime(e.date,"%m/%d/%Y") >= datetime.datetime.now():
-                output += messages.eventmsg.format(e.title,e.description,e.date,e.time)
+            if datetime.strptime(e.date,"%m/%d/%Y") >= datetime.now():
+                output += messages.eventmsg.format(e.title,e.description,e.date,e.time, (datetime.strptime(e.time, "%H:%M")-timedelta(hours=5)).strftime('%H:%M'))
         return output
 
     #list next event
     @staticmethod
     def next_event():
         nextEvent = sorted(events.event_list, key=lambda e: e.date and e.time)[0]
-        return messages.eventmsg.format(nextEvent.title, nextEvent.description,nextEvent.date,nextEvent.time)
+        return messages.eventmsg.format(nextEvent.title, nextEvent.description,nextEvent.date,nextEvent.time,(datetime.strptime(nextEvent.time, "%H:%M")-timedelta(hours=5)).strftime('%H:%M'))
 
     @staticmethod
     def save_events():
