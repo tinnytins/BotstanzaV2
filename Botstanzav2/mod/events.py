@@ -61,14 +61,14 @@ class events:
         output = ""
         for e in events.event_list:
             if datetime.strptime(e.date,"%m/%d/%Y") >= datetime.now():
-                output += messages.eventmsg.format(e.title,e.description,e.date,e.time, (datetime.strptime(e.time, "%H:%M")-timedelta(hours=5)).strftime('%H:%M'))
+                output += messages.eventmsg.format(e.title,e.description,e.date,e.time, (datetime.strptime(e.time, "%H:%M")-timedelta(hours=4)).strftime('%H:%M'))
         return output
 
     #list next event
     @staticmethod
     def next_event():
         nextEvent = [event for event in sorted(events.event_list, key=lambda e: e.date and e.time) if  datetime.strptime(event.date,"%m/%d/%Y") >= datetime.now()][0] 
-        return messages.eventmsg.format(nextEvent.title, nextEvent.description,nextEvent.date,nextEvent.time,(datetime.strptime(nextEvent.time, "%H:%M")-timedelta(hours=5)).strftime('%H:%M'))
+        return messages.eventmsg.format(nextEvent.title, nextEvent.description,nextEvent.date,nextEvent.time,(datetime.strptime(nextEvent.time, "%H:%M")-timedelta(hours=4)).strftime('%H:%M'))
 
     @staticmethod
     def save_events():

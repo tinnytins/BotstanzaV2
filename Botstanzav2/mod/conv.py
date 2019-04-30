@@ -6,7 +6,7 @@ class Conversions:
 
     @staticmethod
     def __init__():
-        Conversions.ConversionsList = conversionsList(json.load(open("./data/Conversions.json", "r")))
+        Conversions.ConversionsList = conversionsList(json.load(open("data/Conversions.json", "r")))
 
     @staticmethod
     async def process_message(message):
