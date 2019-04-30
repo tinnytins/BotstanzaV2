@@ -2,6 +2,9 @@
 
 
 class Configuration(object):
+
+    config_serialisation_format = '{"BannedWordsPathModerate":"{0}","BannedWordsPathSevere":"{1}","BotToken":"{2}","FilterExcludedChannels":"{3}","IntroductionChannel":"{4}","MuteRole":"{5}","Prefix":"{6}","ProfanityFilterEnabled":"{7}","ReportChannel":"{8}","RPSEnabled":"{9}","SelfiesChannel":"{10}","StaffChannel":"{11}","SuggestionsChannel":"{12}","SuggestionsEnabled":"{13}"}'
+
     # general
     bot_token = ""
     staff_channel = ""
@@ -45,3 +48,11 @@ class Configuration(object):
     @staticmethod
     def string_to_bool(string):
         return str(string).lower() == "true"
+
+    @staticmethod
+    def save_config():
+        open("./data/conf.json", "w").write(serialize_config())
+
+
+    def serialize_config():
+        return config_serialisation_format.format(Configuration.filter_words_path_moderate,Configuration.filter_words_path_severe,Configuration.bot_token,Configuration.filter_excluded_channels,Configuration.intro_channel,Configuration.mute_role,Configuration.prefix,Configuration.filter_enabled,Configuration.report_channel,Configuration.selfies_channel,Configuration.staff_channel,Configuration.suggestions_channel,Configuration.suggestions_enabled)

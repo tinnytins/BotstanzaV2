@@ -4,9 +4,15 @@ from mod.filter import Filter
 from mod.reacts import react
 from mod.feedback import feedback
 from mod.conv import Conversions    
+from mod.events import events
+from mod.msg import messages
+
+#setup all our static classes for use elsewhere
 Configuration()
 Filter()
 Conversions()
+messages()
+events()
 client = discord.Client()
 
 @client.event
@@ -24,5 +30,6 @@ async def on_message(message):
         await react.process_message(message)
         await feedback.process_message(message)
         await Conversions.process_message(message)
+        await events.process_message(message)
 
 client.run(Configuration.bot_token)

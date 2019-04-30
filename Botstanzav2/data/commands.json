@@ -1,0 +1,29 @@
+{
+  "Commands": [
+    {
+      "CommandText": "suggest",
+      "Description": "Puts a suggestion in the suggestions channel",
+      "Example": "{0}suggest this is an example suggestion"
+    },
+    {
+      "CommandText": "report",
+      "Description": "Reports another user to the staff",
+      "Example": "{0}report @tubby he isn't wotking on my code"
+    },
+    {
+      "CommandText": "commands",
+      "Description": "Lists all of botstanza's commands",
+      "Example": "{0}commands"
+    },
+    {
+      "CommandText": "listevents",
+      "Description": "Lists all the upcoming events",
+      "Example": "{0}listevents"
+    },
+    {
+      "CommandText": "nextevent",
+      "Description": "gives you the next event in the calendar",
+      "Example": "{0}nextevent"
+    }
+  ]
+}

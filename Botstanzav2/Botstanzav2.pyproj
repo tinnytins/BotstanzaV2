@@ -27,10 +27,16 @@
     <Compile Include="mod\conv.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="mod\events.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="mod\feedback.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="mod\filter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mod\msg.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="mod\reacts.py">
@@ -46,11 +52,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\BannedWords.csv" />
+    <Content Include="data\commands.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="data\conf.json" />
     <Content Include="data\Conversions.json">
       <SubType>Code</SubType>
     </Content>
     <Content Include="data\FilteredWords.csv" />
+    <Content Include="data\messages.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="mod\conf.py">
       <SubType>Code</SubType>
     </Content>

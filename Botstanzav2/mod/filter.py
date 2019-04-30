@@ -22,16 +22,21 @@ class Filter:
             if message.author.guild_permissions.administrator:
                 if message.content.startswith('addword'):
                     await Filter.add_word(message.content.split(' ')[1].lower())
+                    result = "Word added"
                 elif message.content.startswith('removeword'):
                     await Filter.remove_word(message.content.split(' ')[1].lower())
+                    result = "Word removed"
                 elif message.content.startswith('savewords'):
                     await Filter.save_words()
+                    result = "Words saved"
                 elif message.content.startswith('reloadlists'):
-                    await Filter.load_lists(Filter.severe_path, Filter.moderate_path)
-            result = await Filter.has_profanity(message.content)
+                    Filter.load_lists(Filter.severe_path, Filter.moderate_path)
+                    result = "Lists reloaded"
+            if result == None:
+                result = await Filter.has_profanity(message.content)
 
-            if result != ProfanitySeverity.NoProfanity and result is not None:
-                if result.value == ProfanitySeverity.Severe.value:
+            if result != ProfanitySeverity.NoProfanity and result != None:
+                if result == ProfanitySeverity.Severe:
                     await message.author.add_roles(discord.utils.get(message.guild.roles, id=Configuration.mute_role))
                     if message.author.nick is not None:
                         name = message.author.nick
@@ -40,9 +45,12 @@ class Filter:
                     await discord.utils.find(lambda chan: chan.id == Configuration.staff_channel, message.guild.channels).send(
                         "Muted " + name + " for profanity, they said: ```" + message.content + "```")
                     await message.delete()
-                else:
+                elif result == ProfanitySeverity.Moderate:
                     await message.channel.send("https://pbs.twimg.com/media/BlbsEdPCcAANrC9.jpg")
                     await message.delete()
+                elif result != None:
+                    await message.channel.send(result)
+
 
     @staticmethod
     async def has_profanity(message_text):
