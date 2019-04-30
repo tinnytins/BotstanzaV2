@@ -45,6 +45,9 @@
     <Compile Include="mod\rps.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="mod\utils.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="data\" />

@@ -8,7 +8,7 @@
     {
       "CommandText": "report",
       "Description": "Reports another user to the staff",
-      "Example": "{0}report @tubby he isn't wotking on my code"
+      "Example": "{0}report @tubby he isn't working on my code"
     },
     {
       "CommandText": "commands",

@@ -16,18 +16,20 @@ class events:
 
     @staticmethod
     async def process_message(message):
-            if message.content.startswith("addevent "):
-                msg = events.validate_data(message.content[8:].strip())
-                if msg == None:
-                    events.event_list.append(event(message.content[8:].strip()))
-                    msg = "Event added"
-            elif message.content.startswith("listevents"):
-                msg = events.list_events()
-            elif message.content.startswith("nextevent"):
-                msg = events.next_event()
-            elif message.content.startswith("saveevents"):
-                events.save_events()
-                msg = "Events saved"
+        msg = ""
+        if message.content.startswith("addevent "):
+            msg = events.validate_data(message.content[8:].strip())
+            if msg == None:
+                events.event_list.append(event(message.content[8:].strip()))
+                msg = "Event added"
+        elif message.content.startswith("listevents"):
+            msg = events.list_events()
+        elif message.content.startswith("nextevent"):
+            msg = events.next_event()
+        elif message.content.startswith("saveevents"):
+            events.save_events()
+            msg = "Events saved"
+        if msg != "":
             await message.channel.send(msg)
     #add event
     @staticmethod

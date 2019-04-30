@@ -17,7 +17,7 @@ class Filter:
 
     @staticmethod
     async def process_message(message):
-        if message.channel.id not in Configuration.filter_excluded_channels:
+        if str(message.channel.id) not in Configuration.filter_excluded_channels:
             result = None
             if message.author.guild_permissions.administrator:
                 if message.content.startswith('addword'):
