@@ -13,7 +13,6 @@ class events:
     def __init__():
         events.event_list = eventslist(json.load(open("./data/events.json", "r")))
        
-
     @staticmethod
     async def process_message(message):
         msg = ""
@@ -22,6 +21,7 @@ class events:
             if msg == None:
                 events.event_list.append(event(message.content[8:].strip()))
                 msg = "Event added"
+                events.save_events()
         elif message.content.startswith("listevents"):
             msg = events.list_events()
         elif message.content.startswith("nextevent"):
