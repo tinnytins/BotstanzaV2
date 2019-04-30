@@ -67,7 +67,7 @@ class events:
     #list next event
     @staticmethod
     def next_event():
-        nextEvent = sorted(events.event_list, key=lambda e: e.date and e.time)[0]
+        nextEvent = [event for event in sorted(events.event_list, key=lambda e: e.date and e.time) if  datetime.strptime(event.date,"%m/%d/%Y") >= datetime.now()][0] 
         return messages.eventmsg.format(nextEvent.title, nextEvent.description,nextEvent.date,nextEvent.time,(datetime.strptime(nextEvent.time, "%H:%M")-timedelta(hours=5)).strftime('%H:%M'))
 
     @staticmethod
