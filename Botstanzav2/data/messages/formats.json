@@ -1,0 +1,21 @@
+{
+  "formats": [
+    {
+      "name": "event",
+      "replacements": [
+        {
+          "{title}": "{0}",
+          "{description}": "{1}"
+        }
+      ]
+    },
+    {
+      "name": "eventdate",
+      "replacements": [
+        {
+          "{GMT}": "{0}GMT",
+          "{EST}": "{1}EST"
+        }
+      ]
+    }]
+}

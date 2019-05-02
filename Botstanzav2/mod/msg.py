@@ -1,12 +1,15 @@
-import json
+import jsonpickle
 
 class messages:
     eventmsg = ""
-
+    eventnamelistmsg = ""
+    eventdate = ""
     @staticmethod
     def __init__():
-        conf = json.load(open("./data/messages.json", "r"))
+        conf = jsonpickle.decode(open("./data/messages/messages.json", "r").read())
         messages.eventmsg = conf["events"]
+        messages.eventnamelistmsg = conf["eventnamelist"]
+        messages.eventdate = conf["eventdate"]
 
     @staticmethod
     def process_message(message):

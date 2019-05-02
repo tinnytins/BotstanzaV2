@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="data\" />
+    <Folder Include="data\messages\" />
     <Folder Include="mod\" />
   </ItemGroup>
   <ItemGroup>
@@ -63,7 +64,8 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="data\FilteredWords.csv" />
-    <Content Include="data\messages.json">
+    <Content Include="data\messages\formats.json" />
+    <Content Include="data\messages\messages.json">
       <SubType>Code</SubType>
     </Content>
     <Content Include="mod\conf.py">

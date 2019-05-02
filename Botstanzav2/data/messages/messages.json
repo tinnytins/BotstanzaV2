@@ -1,0 +1,5 @@
+{
+  "events": "**{0.title}**\n{0.description}\nEvent Dates:\n",
+  "eventnamelist": "{0}. {1}\n",
+  "eventdate": "         on {0.date} at {0.time}GMT/{1}EST\n"
+}
