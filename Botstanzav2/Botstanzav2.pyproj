@@ -55,15 +55,12 @@
     <Folder Include="mod\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="data\BannedWords.csv" />
     <Content Include="data\commands.json">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="data\conf.json" />
     <Content Include="data\Conversions.json">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="data\FilteredWords.csv" />
     <Content Include="data\messages\formats.json" />
     <Content Include="data\messages\messages.json">
       <SubType>Code</SubType>
