@@ -24,6 +24,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Botstanzav2.py" />
+    <Compile Include="game\game.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game\locationController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game\nav.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game\player.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="mod\conv.py">
       <SubType>Code</SubType>
     </Compile>
@@ -52,7 +64,10 @@
   <ItemGroup>
     <Folder Include="data\" />
     <Folder Include="data\messages\" />
+    <Folder Include="data\rps\" />
+    <Folder Include="game\data\" />
     <Folder Include="mod\" />
+    <Folder Include="game\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\commands.json">
@@ -65,6 +80,10 @@
     <Content Include="data\messages\messages.json">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="data\rps\RPSObjects.json">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="game\data\locations.json" />
     <Content Include="mod\conf.py">
       <SubType>Code</SubType>
     </Content>
