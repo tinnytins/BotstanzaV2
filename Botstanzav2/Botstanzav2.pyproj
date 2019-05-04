@@ -24,16 +24,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Botstanzav2.py" />
-    <Compile Include="game\game.py">
+    <Compile Include="rpg\main.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="game\locationController.py">
+    <Compile Include="rpg\controllers\locationController.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="game\nav.py">
+    <Compile Include="rpg\models\location.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="game\player.py">
+    <Compile Include="rpg\models\player.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="rpg\util\nav.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="rpg\controllers\playerController.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="mod\conv.py">
@@ -65,9 +71,12 @@
     <Folder Include="data\" />
     <Folder Include="data\messages\" />
     <Folder Include="data\rps\" />
-    <Folder Include="game\data\" />
+    <Folder Include="rpg\data\" />
+    <Folder Include="rpg\controllers\" />
+    <Folder Include="rpg\models\" />
+    <Folder Include="rpg\util\" />
     <Folder Include="mod\" />
-    <Folder Include="game\" />
+    <Folder Include="rpg\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\commands.json">
@@ -83,8 +92,8 @@
     <Content Include="data\rps\RPSObjects.json">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="game\data\locations.json" />
-    <Content Include="game\data\players.json" />
+    <Content Include="rpg\data\locations.json" />
+    <Content Include="rpg\data\players.json" />
     <Content Include="mod\conf.py">
       <SubType>Code</SubType>
     </Content>
