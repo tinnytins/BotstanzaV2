@@ -1,11 +1,11 @@
 #imports
-from game.player import playerController
-from game.locationController import locationController
+from rpg.controllers.playerController import playerController
+from rpg.controllers.locationController import locationController
 #init statics
 playerController()
 locationController()
 
-class game:
+class rpg:
 
     async def process_message(message):
         if message.content.startswith("join") and len([p for p in playerController.players if p.id == message.author.id]) == 0:

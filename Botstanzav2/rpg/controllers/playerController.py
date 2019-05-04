@@ -1,5 +1,5 @@
 import jsonpickle
-
+from rpg.models.player import player
 class playerController(object):
     players = []
 
@@ -21,13 +21,3 @@ class playerController(object):
     def updatePlayer(player):
        [p for p in playerController.players if p.id == player.id][0] = player
        playerController.save()
-
-class player(object):
-    id = 0
-    playername = ""
-    currentlocation = 0
-
-    def __init__(self,id, playername):
-        self.id = id
-        self.playername = playername
-        self.currentlocation = 0
