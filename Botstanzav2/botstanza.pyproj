@@ -3,13 +3,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f63aea91-d877-42fa-a498-bce95d8f7bf5</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
-    <StartupFile>Botstanzav2.py</StartupFile>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>botstanza.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Botstanzav2</Name>
+    <Name>botstanza</Name>
     <RootNamespace>Botstanzav2</RootNamespace>
     <IsWindowsApplication>False</IsWindowsApplication>
     <InterpreterId>Global|PythonCore|3.7</InterpreterId>
@@ -23,7 +24,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Botstanzav2.py" />
+    <Compile Include="botstanza.py" />
     <Compile Include="rpg\main.py">
       <SubType>Code</SubType>
     </Compile>

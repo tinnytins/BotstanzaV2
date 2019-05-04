@@ -1,1 +1,132 @@
-{"events":[{"title":"test","description":"testdescription","date":"04/29/2019","time":"09:00"},{"title":"Linguistics Club","description":"This is an event for anyone wanting to practice or learn another language","date":"05/03/2019","time":"19:00"}]}
+{
+    "py/object": "mod.events.eventslist",
+    "py/seq": [
+        {
+            "py/object": "mod.events.event",
+            "title": "Art Contest",
+            "description": " Our Monthly Art Contest will begin",
+            "eventdates": [
+                {
+                    "date": "05/12/2019",
+                    "time": "00:00"
+                }
+            ]
+        },
+        {
+            "py/object": "mod.events.event",
+            "title": "Powerpoint Night",
+            "description": "This event will be a series of Powerpoint Presentations put on by members of the community!",
+            "eventdates": [
+                {
+                    "date": "05/19/2019",
+                    "time": "17:00"
+                }
+            ]
+        },
+        {
+            "py/object": "mod.events.event",
+            "title": "Meme Night",
+            "description": "This is an event for shitposting memes.",
+            "eventdates": [
+                {
+                    "date": "05/15/2019",
+                    "time": "18:00"
+                },
+                {
+                    "date": "05/29/2019",
+                    "time": "18:00"
+                },
+                {
+                    "date": "05/05/2019",
+                    "time": "22:00"
+                }
+            ]
+        },
+        {
+            "py/object": "mod.events.event",
+            "title": "Linguistics Club",
+            "description": "This is an event for anyone wanting to practice or learn another language",
+            "eventdates": [
+                {
+                    "date": "05/03/2019",
+                    "time": "19:00"
+                },
+                {
+                    "date": "05/17/2019",
+                    "time": "19:00"
+                },
+                {
+                    "date": "05/31/2019",
+                    "time": "19:00"
+                }
+            ]
+        },
+        {
+            "py/object": "mod.events.event",
+            "title": "Kahoot Quiz Night",
+            "description": "During this event we will play various quizzes on Kahoot!",
+            "eventdates": [
+                {
+                    "date": "05/10/2019",
+                    "time": "19:00"
+                }
+            ]
+        },
+        {
+            "py/object": "mod.events.event",
+            "title": "Music Quiz Night",
+            "description": "During this event we will play a music quiz testing various music knowledge! ",
+            "eventdates": [
+                {
+                    "date": "05/24/2019",
+                    "time": "19:00"
+                }
+            ]
+        },
+        {
+            "py/object": "mod.events.event",
+            "title": "Game Night",
+            "description": "Games will include Uno, Bingo, Skribbl.io, and many other browser based multiplayer games.",
+            "eventdates": [
+                {
+                    "date": "05/11/2019",
+                    "time": "20:00"
+                },
+                {
+                    "date": "05/25/2019",
+                    "time": "20:00"
+                }
+            ]
+        },
+        {
+            "py/object": "mod.events.event",
+            "title": "Minecraft Night",
+            "description": "A Night dedicated to playing on our community Minecraft server.",
+            "eventdates": [
+                {
+                    "date": "05/13/2019",
+                    "time": "20:00"
+                },
+                {
+                    "date": "05/27/2019",
+                    "time": "20:00"
+                }
+            ]
+        },
+        {
+            "py/object": "mod.events.event",
+            "title": "Campfire Story Night",
+            "description": "This is a super casual and super comfy voice chat session for sharing stories and such!",
+            "eventdates": [
+                {
+                    "date": "05/07/2019",
+                    "time": "21:00"
+                },
+                {
+                    "date": "05/21/2019",
+                    "time": "21:00"
+                }
+            ]
+        }
+    ]
+}

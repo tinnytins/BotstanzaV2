@@ -7,7 +7,7 @@ class utils:
     @staticmethod
     async def process_message(message):
         if message.content.startswith("commands"):
-           await message.channel.send(utils.build_command_list())
+            await message.channel.send(utils.build_command_list())
 
     @staticmethod
     def build_command_list():

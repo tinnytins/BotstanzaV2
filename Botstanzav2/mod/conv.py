@@ -1,31 +1,39 @@
+"""module for the converting of units"""
 import json
-
-
+from sympy import sympify
 class Conversions:
-    ConversionsList = None
+    """Static class for hanfling conversion requests"""
 
+    ConversionsList = None
     @staticmethod
     def __init__():
         Conversions.ConversionsList = conversionsList(json.load(open("data/Conversions.json", "r")))
 
     @staticmethod
     async def process_message(message):
+        """processes message to see if action needs to be taken in this module"""
+
         if message.content.startswith("convert"):
             await message.channel.send(await Conversions.convert(message.content))
 
     @staticmethod
     async def convert(message_content):
-        conv = conversionRequest(message_content.strip().split(" ")[1:])
+        """converts value from one unit to another"""
+        conversion = conversionRequest(message_content.strip().split(" ")[1:])
+        return_message = ""
 
-        if conv.value == 0 or not conv.value.isdecimal():
-            return "Invalid parameters have been provided"
+        if conversion.value == 0 or not conversion.value.isdecimal():
+            return_message = "Invalid parameters have been provided"
         else:
-            for c in Conversions.ConversionsList:
-                if c.UnitA == conv.first_unit and c.UnitB == conv.second_unit:
-                    return str(round(eval(c.AtoB.format(conv.value)),2)) + conv.second_unit 
-                elif c.UnitA == conv.second_unit and c.UnitB == conv.first_unit:
-                    return str(round(eval(c.BtoA.format(conv.value)),2)) + conv.second_unit 
-            return "No conversion matches the provided parameters"
+            for current_conversion in Conversions.ConversionsList:
+                if (current_conversion.UnitA == conversion.first_unit and
+                        current_conversion.UnitB == conversion.second_unit):
+                    return_message = str(round(sympify(current_conversion.AtoB).subs(x,conversion.value),2)) + conversion.second_unit 
+                elif current_conversion.UnitA == conversion.second_unit and current_conversion.UnitB == conversion.first_unit:
+                    return_message = str(round(sympify(current_conversion.BtoA).subs(x,conversion.value),2)) + conversion.second_unit 
+                else:
+                    return_message = "No conversion matches the provided parameters"
+        return return_message
    
     @staticmethod
     async def conversion_exists(unit_a,unit_b):
@@ -68,3 +76,4 @@ class conversionsList(list):
     def __init__(self,data):
         for conv in data["Conversions"]:
             self.append(c(conv))
+

@@ -18,16 +18,16 @@ class rpg:
             elif message.content.startswith("current"):
                 await message.channel.send(currentlocation.description)
             elif message.content.startswith("move"):
-                dir = message.content.split(" ")[1]
-                if dir == "east":
+                direction = message.content.split(" ")[1]
+                if direction == "east":
                     desc = locationController.getLocation(currentlocation.directionOptions.east).description
                     player.currentlocation = currentlocation.directionOptions.east
-                elif dir == "west":
+                elif direction == "west":
                     desc = locationController.getLocation(currentlocation.directionOptions.west).description
                     player.currentlocation = currentlocation.directionOptions.west
-                elif dir == "north":
+                elif direction == "north":
                     desc = locationController.getLocation(currentlocation.directionOptions.north).description
-                elif dir == "south":
+                elif direction == "south":
                     desc = locationController.getLocation(currentlocation.directionOptions.south).description
                 await message.channel.send(desc)
                 playerController.updatePlayer(player)

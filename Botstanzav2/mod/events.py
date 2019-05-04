@@ -42,7 +42,7 @@ class events:
 
     @staticmethod 
     def create_event(event):
-        if len([e for e in event_list if e.title == event.title]) == 0:
+        if len([e for e in events.event_list if e.title == event.title]) == 0:
             events.event_list.append(event)
             events.save_events()
             return "Event created"
