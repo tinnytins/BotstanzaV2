@@ -3,11 +3,7 @@ class location(object):
     description = ""
     directionOptions = None
     characters = []
-
-    def __init__(self,id,description, directionOptions):
-        self.id = id
-        self.description = description
-        self.directionOptions = directionOptions
+    items = []
 
 class directions(object):
     north = 0

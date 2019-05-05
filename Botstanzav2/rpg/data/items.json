@@ -1,0 +1,9 @@
+[
+    {
+        "py/object": "rpg.models.item.item",
+        "name": "Todd's Bed",
+        "description": "This is Todd's bed, it looks comfy",
+        "usetext": "You settle into Todd's Bed and close your eyes...... Your eyes slowly open and you see you're riding in a cart, your hands tied 'Hey, you. You're finally awake.' the man oppposite you says, you awake and get out of Todd's bed, he did it again...",
+        "collectible": false
+    }
+]

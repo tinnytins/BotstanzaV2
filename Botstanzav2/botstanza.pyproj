@@ -28,6 +28,9 @@
     <Compile Include="rpg\controllers\characterController.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="rpg\controllers\ItemController.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="rpg\main.py">
       <SubType>Code</SubType>
     </Compile>
@@ -35,6 +38,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="rpg\models\character.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="rpg\models\item.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="rpg\models\location.py">
@@ -100,6 +106,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="rpg\data\characters.json" />
+    <Content Include="rpg\data\items.json" />
     <Content Include="rpg\data\locations.json" />
     <Content Include="rpg\data\players.json" />
     <Content Include="mod\conf.py">

@@ -4,14 +4,17 @@
     "description": "You are standing in an open field west of a white house, with a boarded front door. There is a small mailbox here.",
     "id": 0,
     "directionOptions": {
-      "py/object": "rpg.controllers.locationController.directions",
+      "py/object": "rpg.models.location.directions",
       "east": 1,
       "north": 0,
       "south": 0,
       "west": 1
     },
     "characters": [
-      0
+        0
+    ],
+    "items": [
+        0
     ]
   },
   {
@@ -19,7 +22,7 @@
     "description": "this is east of the house",
     "id": 1,
     "directionOptions": {
-      "py/object": "rpg.controllers.locationController.directions",
+      "py/object": "rpg.models.location.directions",
       "east": 0,
       "north": 0,
       "south": 0,

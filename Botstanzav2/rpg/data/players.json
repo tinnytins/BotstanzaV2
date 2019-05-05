@@ -1,1 +1,1 @@
-[{"py/object": "game.player.player", "currentlocation": 1, "id": 285476840657649665, "playername": "test"}]
+[{"py/object": "rpg.models.player.player", "currentlocation": 0, "id": 285476840657649665, "playername": "test"}]
