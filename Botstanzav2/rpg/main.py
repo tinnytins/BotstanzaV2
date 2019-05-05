@@ -1,9 +1,12 @@
 #imports
-from rpg.controllers.playerController import playerController
-from rpg.controllers.locationController import locationController
+from rpg.controllers.playerController import playerController # type: ignore
+from rpg.controllers.locationController import locationController # type: ignore
+from rpg.controllers.characterController import characterController # type: ignore
+from discord import message
 #init statics
 playerController()
 locationController()
+characterController()
 
 class rpg:
 

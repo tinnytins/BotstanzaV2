@@ -1,4 +1,4 @@
-
+from discord import message
 
 class navigation:
     directions = ["up","down","left","right","forward","back"]

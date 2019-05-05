@@ -2,11 +2,12 @@ class location(object):
     id = 0
     description = ""
     directionOptions = None
+    characters = []
 
     def __init__(self,id,description, directionOptions):
         self.id = id
         self.description = description
-        directionOptions = directionOptions
+        self.directionOptions = directionOptions
 
 class directions(object):
     north = 0

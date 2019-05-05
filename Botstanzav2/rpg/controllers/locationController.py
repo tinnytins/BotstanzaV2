@@ -19,7 +19,7 @@ class locationController(object):
         locationController.save()
 
     @staticmethod
-    def getLocation(locationId):
+    def get(locationId):
         return [l for l in locationController.locations if l.id == locationId][0]
 
 

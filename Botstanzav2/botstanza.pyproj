@@ -25,10 +25,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="botstanza.py" />
+    <Compile Include="rpg\controllers\characterController.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="rpg\main.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="rpg\controllers\locationController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="rpg\models\character.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="rpg\models\location.py">
@@ -93,6 +99,7 @@
     <Content Include="data\rps\RPSObjects.json">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="rpg\data\characters.json" />
     <Content Include="rpg\data\locations.json" />
     <Content Include="rpg\data\players.json" />
     <Content Include="mod\conf.py">
