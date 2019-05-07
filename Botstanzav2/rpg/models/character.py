@@ -3,3 +3,10 @@ class character(object):
     id = ""
     name = ""
     description = ""
+  
+
+
+
+class conversation:
+    prompt = ""
+    reply = ""
