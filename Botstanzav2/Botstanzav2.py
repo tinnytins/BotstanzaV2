@@ -7,7 +7,7 @@ from mod.conv import Conversions
 from mod.events import events
 from mod.msg import messages
 from mod.utils import utils
-
+from mod.ufo import ufo
 #setup all our static classes for use elsewhere
 Configuration()
 Filter()
@@ -33,5 +33,6 @@ async def on_message(message):
         await Conversions.process_message(message)
         await events.process_message(message)
         await utils.process_message(message)
+        await ufo.process_message(message)
 
 client.run(Configuration.bot_token)
