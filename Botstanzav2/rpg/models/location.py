@@ -1,0 +1,18 @@
+class location(object):
+    id = 0
+    description = ""
+    directionOptions = None
+    characters = []
+    items = []
+
+class directions(object):
+    north = 0
+    south = 0
+    east = 0
+    west = 0
+
+    def __init__(self,n,s,e,w):
+        self.north = n
+        self.south = s
+        self.east = e
+        self.west = w
