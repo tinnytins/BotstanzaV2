@@ -21,16 +21,16 @@ class Conversions:
             return "Invalid parameters have been provided"
         else:
             for c in Conversions.ConversionsList:
-                if c.UnitA == conv.first_unit and c.UnitB == conv.second_unit:
+                if conv.first_unit in c.UnitA and conv.second_unit in c.UnitB:
                     return str(round(eval(c.AtoB.format(conv.value)),2)) + conv.second_unit 
-                elif c.UnitA == conv.second_unit and c.UnitB == conv.first_unit:
+                elif conv.second_unit in c.UnitA and conv.first_unit in c.UnitB:
                     return str(round(eval(c.BtoA.format(conv.value)),2)) + conv.second_unit 
             return "No conversion matches the provided parameters"
    
     @staticmethod
     async def conversion_exists(unit_a,unit_b):
         for conversion in Conversions.ConversionsList:
-            if conversion.UnitA == unit_a and conversion.UnitB == unit_b:
+            if unit_a in conversion.UnitA and unit_b in conversion.UnitB:
                 return True
             return False
 
@@ -49,8 +49,8 @@ class conversionRequest:
 
 class c:
 
-    UnitA = ""
-    UnitB = ""
+    UnitA = []
+    UnitB = []
     AtoB = ""
     BtoA = ""
     count = 0
