@@ -8,6 +8,7 @@ from mod.events import events
 from mod.msg import messages
 from mod.utils import utils
 from mod.seinfeld import seinfeld
+from mod.ufo import ufo
 
 #setup all our static classes for use elsewhere
 Configuration()
@@ -36,4 +37,14 @@ async def on_message(message):
         await events.process_message(message)
         await utils.process_message(message)
         await seinfeld.process_message(message)
+        await ufo.process_message(message)
+
+@client.event
+async def on_member_update(before,after):
+    spark = discord.utils.get(after.guild.roles,name="Spark")
+    category_roles = [574296709375721482,574295671570563083,574297038565539841,574297223832272906,574297351297040400]
+    if spark not in before.roles and spark in after.roles:
+        for role in category_roles:
+            await after.add_roles(discord.utils.get(after.guild.roles, id =role))
+            
 client.run(Configuration.bot_token)
