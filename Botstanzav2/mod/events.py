@@ -116,7 +116,7 @@ class events:
 
     @staticmethod
     def save_events():
-       open("./data/events.json", "w").write(events.event_list.to_json())
+       open("./data/events.json", "w").write(jsonpickle.encode(events.event_list))
 
 
 class event(object):
