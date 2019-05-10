@@ -7,13 +7,16 @@ from mod.conv import Conversions
 from mod.events import events
 from mod.msg import messages
 from mod.utils import utils
+from mod.seinfeld import seinfeld
 from mod.ufo import ufo
+
 #setup all our static classes for use elsewhere
 Configuration()
 Filter()
 Conversions()
 messages()
 events()
+seinfeld()
 client = discord.Client()
 
 @client.event
@@ -33,6 +36,7 @@ async def on_message(message):
         await Conversions.process_message(message)
         await events.process_message(message)
         await utils.process_message(message)
+        await seinfeld.process_message(message)
         await ufo.process_message(message)
 
 @client.event
@@ -42,4 +46,5 @@ async def on_member_update(before,after):
     if spark not in before.roles and spark in after.roles:
         for role in category_roles:
             await after.add_roles(discord.utils.get(after.guild.roles, id =role))
+            
 client.run(Configuration.bot_token)
