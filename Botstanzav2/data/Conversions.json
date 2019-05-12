@@ -1,8 +1,8 @@
 {
   "Conversions": [
     {
-      "UnitA": ["f","fahrenheit"],
-      "UnitB": ["c","celsius"],
+      "UnitA": [ "f", "fahrenheit" ],
+      "UnitB": [ "c", "celsius" ],
       "AtoB": "({0} - 32) * (5 / 9)",
       "BtoA": "{0} * (9 / 5) + 32",
       "count": "0"
@@ -19,6 +19,27 @@
       "UnitB": [ "st" ],
       "AtoB": "{0} / 6.35",
       "BtoA": "{0} * 6.35",
+      "count": "0"
+    },
+    {
+      "UnitA": [ "km", "kilometer", "kph" ],
+      "UnitB": [ "mi", "miles", "mph" ],
+      "AtoB": "{0} / 1.6093440",
+      "BtoA": "{0} * 1.6093440",
+      "count": "0"
+    },
+    {
+      "UnitA": [ "knot" ],
+      "UnitB": [ "kph" ],
+      "AtoB": "{0} * 1.852",
+      "BtoA": "{0} / 1.852",
+      "count": "0"
+    },
+    {
+      "UnitA": [ "knot" ],
+      "UnitB": [ "mph" ],
+      "AtoB": "{0} * 1.151",
+      "BtoA": "{0} / 1.151",
       "count": "0"
     }
   ]
