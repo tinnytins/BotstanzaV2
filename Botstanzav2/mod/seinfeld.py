@@ -1,21 +1,25 @@
 import jsonpickle
 import random
+import sqlite3 as sql
 class seinfeld:
     quotes = []
 
     @staticmethod
     def __init__():
-        seinfeld.quotes = jsonpickle.decode(open("./data/seinfeld.json").read())
+        seinfeld.quotes = jsonpickle.decode(open("./data/seinfeld.json",  encoding='utf-8').read())
     @staticmethod
     async def process_message(message):
         if message.content == "squote":
-            selected_quote = seinfeld.quotes[random.randint(0,len(seinfeld.quotes)-1)]
+            conn = sql.connect("./data/botstanza.db")
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM seinfeld ORDER BY RANDOM() LIMIT 1;")
+            selected_quote = cur.fetchone()
             await message.channel.send('"{0}" - {1},\n Season {2} Episode {3}'.format(
-                selected_quote.quote,selected_quote.author,selected_quote.season,selected_quote.episode))
-
-class quote(object):
-    quote = ""
-    author = ""
-    season = ""
-    episode = ""
-    image = ""
+                selected_quote[0],selected_quote[1],selected_quote[2],selected_quote[3]))
+        elif message.content == "savequotes":
+            conn = sql.connect("./data/botstanza.db")
+            cur = conn.cursor()
+            for quote in seinfeld.quotes:
+                cur.execute("insert into seinfeld values('{0}','{1}',{2},{3})".format(quote.quote.replace("'","''"),quote.author.replace("'","''"),quote.season,quote.episode))
+            conn.commit()
+            conn.close()
